@@ -1,2 +1,2 @@
 # betterrest
-ML and SwiftUI test project.
+ML and SwiftUI app.
