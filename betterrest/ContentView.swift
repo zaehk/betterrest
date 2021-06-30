@@ -21,7 +21,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             
-            VStack{
+            VStack(alignment: .leading) {
                 Text("When do you want to wake up")
                     .font(.headline)
                 DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
@@ -31,15 +31,15 @@ struct ContentView: View {
                 Stepper(value: $sleepAmount, in: 4...12, step: 0.25) {
                     Text("\(sleepAmount, specifier: "%g") hours")
                 }
-                .padding()
-                
                 Text("Daily coffee intake")
                     .font(.headline)
                 Stepper(value: $coffeeAmount, in: 1...20) {
                     Text("Cups of coffe: \(coffeeAmount)")
                 }
-                .padding()
+                
             }
+            .padding()
+            
             
             
             .navigationBarTitle("BetterRest")
