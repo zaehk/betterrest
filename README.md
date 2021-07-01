@@ -1,9 +1,8 @@
 # betterrest
-ML and SwiftUI app.
+
+SwiftUI project using Core ML. This project is part of the 100daysofswiftUI
 
 https://www.hackingwithswift.com/100/swiftui/27
-
-https://imgur.com/w22hLMA
 
 
 ![App picture](https://imgur.com/w22hLMA.png)
