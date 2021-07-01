@@ -21,11 +21,17 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             
+            VStack{
             VStack(alignment: .leading) {
+                Text("Sleep information")
+                    .font(.largeTitle)
+                
                 Text("When do you want to wake up")
                     .font(.headline)
                 DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
+                    .accentColor(.black)
                     .labelsHidden()
+                    
                 Text("Desired sleep time")
                     .font(.headline)
                 Stepper(value: $sleepAmount, in: 4...12, step: 0.25) {
@@ -38,16 +44,25 @@ struct ContentView: View {
                 }
                 
             }
+                Spacer()
+                Button("Calculate", action: calculateBedTime)
+                    .padding(EdgeInsets(top: 10, leading: 15, bottom: 10, trailing: 15))
+                    .background(Color.white)
+                    .cornerRadius(5)
+                    .shadow(radius: 5)
+                    .foregroundColor(.black)
+                    .font(.title3.bold())
+            }
+            
+            
+            .padding()
+            .background(Color.orange)
+            .cornerRadius(10)
+            .shadow(color: .gray, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             .padding()
             
             
-            
             .navigationBarTitle("BetterRest")
-            .navigationBarItems(trailing:
-                                    Button(action: calculateBedTime, label: {
-                                        Text("Calculate")
-                                    })
-            )
             .alert(isPresented: $showingAlert, content: {
                 Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             })
