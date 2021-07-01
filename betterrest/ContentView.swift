@@ -56,12 +56,10 @@ struct ContentView: View {
             
             
             .padding()
-            .background(Color.orange)
+            .background(Color.orange.opacity(0.7))
             .cornerRadius(10)
             .shadow(color: .gray, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             .padding()
-            
-            
             .navigationBarTitle("BetterRest")
             .alert(isPresented: $showingAlert, content: {
                 Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
